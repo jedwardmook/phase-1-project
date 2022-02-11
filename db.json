@@ -1,0 +1,39 @@
+{
+  "albums": [
+    {
+      "name": "Song Cycle",
+      "artist": "Van Dyke Parks",
+      "genre": "Orchestral Pop",
+      "release": "1968",
+      "id": 1
+    },
+    {
+      "name": "Aja",
+      "artist": "Steely Dan",
+      "genre": "",
+      "release": "1977",
+      "id": 2
+    },
+    {
+      "name": "Songs of Love and Horror",
+      "artist": "Will Oldham",
+      "genre": "Folk",
+      "release": "2018",
+      "id": 3
+    },
+    {
+      "name": "Herb Alpert Presents Sergio Mendes & Brasil '66",
+      "artist": "Brasil '66",
+      "genre": "Bossa Nova",
+      "release": "1966",
+      "id": 4
+    },
+    {
+      "name": "The Shape of Jazz to Come",
+      "artist": "Ornette Coleman",
+      "genre": "Jazz",
+      "release": "1959",
+      "id": 5
+    }
+  ]
+}
