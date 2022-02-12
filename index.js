@@ -1,12 +1,39 @@
+viewAlbum = false;
+
 document.addEventListener("DOMContentLoaded", () => {
 console.log("hello")
+
+
+
+// const viewCollection = () => {
+//     const viewBtn = document.getElementById("view-btn");
+//     viewBtn.addEventListener("click", () =>{
+//         getAlbums();
+//     })
+// }
+// viewCollection()
+
+const toggleView = () => {
+    const viewBtn = document.getElementById("view-btn");
+    const albumContainer = document.querySelector('.album-container');
+    viewBtn.addEventListener("click", () => {
+    getAlbums()
+    viewAlbum = !viewAlbum;
+      if (viewAlbum) {
+        albumContainer.style.display = "grid";
+      } else {
+        albumContainer.style.display = "none";
+      }
+   })
+};
+toggleView()
 
 function getAlbums() {
     fetch('http://localhost:3000/albums')
     .then(response => response.json())
     .then(albumData => albumData.forEach(renderAlbum))
     };
-getAlbums()
+
 
 function renderAlbum(album){
     let albumCard = document.createElement('div')
