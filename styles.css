@@ -4,11 +4,17 @@ body{
 }
 .search-wrapper{
     display: flex;
+    
     flex-direction: column;
 }
 
 input{
+    border: none;
+    font-size: 12pt;
+    box-shadow: 0 2px 5px 0 rgb(0, 0, 0, .4);
+    border-radius: .25rem;
     width: 300px;
+
 }
 
 .album-container{
@@ -25,7 +31,7 @@ input{
     box-shadow: 0 2px 5px 0 rgb(0, 0, 0, .4);
     border-radius: .25rem;
     padding: .25rem;
-    min-height: 345px;
+    min-height: 355px;
     position: relative;
 }
 
@@ -52,7 +58,7 @@ h4 {
     border-radius: .25rem;
     border-bottom: 1px solid black;
     color: rgb(255, 255, 255);
-    margin-top: 5px;
+    padding: 5px;
     position: absolute;
     right: 5px;
     bottom: 5px;

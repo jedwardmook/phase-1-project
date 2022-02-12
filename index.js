@@ -30,10 +30,21 @@ function renderAlbum(album){
     albumContainer.append(albumCard)
     albumCard.querySelector('#remove').addEventListener('click', () => {
         albumCard.remove()
-        deleteAlbum(album.id)
+        removeAlbum(album.id)
     })
 };
 
+function removeAlbum(id) {
+    fetch(`http://localhost:3000/albums/${id}`,{
+        method: "DELETE",
+        headers: {
+            'Content-Type':'application/json'
+        }
+    })
+    .then(response => response.json())
+    .then(albumData => console.log(albumData))
+    alert("Album deleted")
+};
 
 
 
