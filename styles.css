@@ -3,24 +3,28 @@ body{
 
 }
 
+.buttons{
+    text-align: center;
+}
+
 .header img{
     max-width: 750px;
     margin-bottom: -90px;
 }
 
 .view-btn, .search-btn, .add-btn{
-    background-color: rgb(104, 190, 248);
+    background-color: rgb(0, 178, 220);
     border: none;
     border-radius: .25rem;
     border-bottom: 1px solid black;
     color: rgb(255, 255, 255);
     padding: 5px;
     cursor: pointer;
-    position: center;
 }
 .search-wrapper{
     display: grid;
     flex-direction: column;
+    text-align: center;
 }
 
 input{
@@ -31,7 +35,6 @@ input{
     border-radius: .25rem;
     width: 300px;
     margin-top: 5px;
-
 }
 
 .album-container{
@@ -70,11 +73,11 @@ h4 {
 }
 
 #remove{
-    background-color: rgb(104, 190, 248);
+    background-color: rgb(0, 178, 220);
     border: none;
     border-radius: .25rem;
     border-bottom: 1px solid black;
-    color: rgb(255, 255, 255);
+    color: white;
     padding: 5px;
     position: absolute;
     right: 5px;
