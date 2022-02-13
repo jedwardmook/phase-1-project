@@ -1,23 +1,38 @@
-viewAlbum = false;
+let viewAlbum = false;
+let searchAlbum = true;
 
 document.addEventListener("DOMContentLoaded", () => {
 console.log("hello")
 
 
 
-// const viewCollection = () => {
-//     const viewBtn = document.getElementById("view-btn");
-//     viewBtn.addEventListener("click", () =>{
-//         getAlbums();
-//     })
-// }
-// viewCollection()
+const viewCollection = () => {
+    const viewBtn = document.getElementById("view-btn");
+    viewBtn.addEventListener("click", () =>{
+        getAlbums();
+    })
+}
+viewCollection()
+
+const toggleSearches = () => {
+    const togSearchBtn = document.getElementById("search-btn");
+    const searchBar = document.getElementById("searchBar");
+    togSearchBtn.addEventListener("click", () => {
+    
+      searchAlbum = !searchAlbum;
+      if (searchAlbum) {
+        searchBar.style.display = "none";
+      } else {
+        searchBar.style.display = "grid";
+      }
+   })
+};
+toggleSearches()
 
 const toggleView = () => {
     const viewBtn = document.getElementById("view-btn");
     const albumContainer = document.querySelector('.album-container');
     viewBtn.addEventListener("click", () => {
-    getAlbums()
     viewAlbum = !viewAlbum;
       if (viewAlbum) {
         albumContainer.style.display = "grid";

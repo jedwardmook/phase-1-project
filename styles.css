@@ -3,7 +3,12 @@ body{
 
 }
 
-.view-btn{
+.header img{
+    max-width: 750px;
+    margin-bottom: -90px;
+}
+
+.view-btn, .search-btn{
     background-color: rgb(104, 190, 248);
     border: none;
     border-radius: .25rem;
@@ -14,12 +19,12 @@ body{
     position: center;
 }
 .search-wrapper{
-    display: flex;
-    
+    display: grid;
     flex-direction: column;
 }
 
 input{
+    display: none;
     border: none;
     font-size: 12pt;
     box-shadow: 0 2px 5px 0 rgb(0, 0, 0, .4);
