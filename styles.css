@@ -8,7 +8,7 @@ body{
     margin-bottom: -90px;
 }
 
-.view-btn, .search-btn{
+.view-btn, .search-btn, .add-btn{
     background-color: rgb(104, 190, 248);
     border: none;
     border-radius: .25rem;
