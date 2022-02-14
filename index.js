@@ -1,6 +1,6 @@
 let viewAlbum = false;
-let searchAlbum = true;
-
+let searchAlbum = false;
+let addAlbum = false;
 
 document.addEventListener("DOMContentLoaded", () => {
 
@@ -41,6 +41,21 @@ const toggleView = () => {
 };
 toggleView()
 
+const toggleAdd = () => {
+  const togAddBtn = document.getElementById("add-btn");
+  const addToContainer = document.querySelector(".add-album-form");
+  togAddBtn.addEventListener("click", () => {
+  
+  addAlbum = !addAlbum;
+    if (addAlbum) {
+      addToContainer.style.display = "block";
+    } else {
+      addToContainer.style.display = "none";
+    }
+ })
+  };
+toggleAdd()
+
 function getAlbums() {
     fetch('http://localhost:3000/albums')
     .then(response => response.json())
@@ -52,13 +67,13 @@ const newAlbumForm = () => {
         albumForm.addEventListener('submit', (e) => {
           e.preventDefault()
           const albumName = e.target.name.value
-        //   const newAlbumImage = e.target.image.value
+          const newAlbumImage = e.target.image.value
           const albumArtist = e.target.artist.value
           const albumGenre = e.target.genre.value
           const albumRelease = e.target.release.value
           const newAlbumObj = {
             name: albumName,
-            // image: newAlbumImage,
+            image: newAlbumImage,
             artist: albumArtist,
             genre: albumGenre,
             release: albumRelease,
