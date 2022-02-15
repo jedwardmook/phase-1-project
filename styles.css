@@ -32,6 +32,10 @@ body{
     display: none;
 }
 
+.add-container{
+    position: relative;
+}
+
 .add{
     border: none;
     font-size: 12pt;
@@ -54,8 +58,6 @@ body{
     padding-top: 2.5px;
     padding-bottom: 2.5px;
     cursor: pointer;
-    position: inherit;
-    left: 115px;
 }
 
 .search{

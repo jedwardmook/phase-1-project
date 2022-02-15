@@ -84,7 +84,7 @@ const newAlbumForm = () => {
       genre: albumGenre,
       release: albumRelease,
     }
-    console.log(newAlbumObj)
+    logAlbum(newAlbumObj)
   })
 }
 newAlbumForm()
@@ -113,6 +113,10 @@ function renderAlbum(album){
         albumCard.remove()
         removeAlbum(album.id)
     })
+};
+
+function logAlbum(newAlbumObj){
+
 };
 
 function removeAlbum(id) {
