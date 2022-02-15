@@ -72,7 +72,19 @@ const newAlbumForm = () => {
   const albumForm = document.querySelector(".add-album-form")
   albumForm.addEventListener("submit", (e) => {
     e.preventDefault()
-    console.log(e.target.name.value)
+    const albumName= e.target.album.value
+    const albumImage= e.target.image.value
+    const albumArtist= e.target.artist.value
+    const albumGenre= e.target.genre.value
+    const albumRelease= e.target.release.value
+    const newAlbumObj = {
+      name: albumName,
+      image: albumImage,
+      artist: albumArtist,
+      genre: albumGenre,
+      release: albumRelease,
+    }
+    console.log(newAlbumObj)
   })
 }
 newAlbumForm()
