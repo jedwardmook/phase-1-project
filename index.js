@@ -85,6 +85,7 @@ const newAlbumForm = () => {
       release: albumRelease,
     }
     logAlbum(newAlbumObj)
+    alert("Album Added")
   })
 }
 newAlbumForm()
@@ -116,7 +117,15 @@ function renderAlbum(album){
 };
 
 function logAlbum(newAlbumObj){
-
+  fetch('http://localhost:3000/albums', {
+    method: "POST",
+    headers: {
+      "Content-type": "application/json",
+    },
+    body: JSON.stringify(newAlbumObj)
+    })
+    .then(response => response.json())
+    .then(response => console.log(newAlbumObj))
 };
 
 function removeAlbum(id) {

@@ -31,6 +31,14 @@
       "genre": "Jazz",
       "release": "1959",
       "id": 5
+    },
+    {
+      "name": "Brother Brother Brother",
+      "image": "https://m.media-amazon.com/images/I/61O8Pqy5wtL._SL1095_.jpg",
+      "artist": "The Isleys",
+      "genre": "Rock, Funk, Soul",
+      "release": "1972",
+      "id": 6
     }
   ]
 }
