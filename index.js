@@ -1,13 +1,15 @@
 let viewAlbum = false;
-let searchAlbum = false;
+let searchAlbum = true;
 let addAlbum = false;
 
 document.addEventListener("DOMContentLoaded", () => {
 
+let gotAlbums = []
+
 const viewCollection = () => {
     const viewBtn = document.getElementById("view-btn");
     viewBtn.addEventListener("click", () =>{
-        getAlbums();
+        gotAlbums.forEach(renderAlbum);
     })
 }
 viewCollection()
@@ -61,8 +63,10 @@ toggleAdd()
 function getAlbums() {
     fetch('http://localhost:3000/albums')
     .then(response => response.json())
-    .then(albumData => albumData.forEach(renderAlbum))
+    .then(albumData => {
+      gotAlbums = albumData})
     };
+getAlbums()
 
 // const newAlbumForm = () => {
 //         const albumForm = document.querySelector('.add-album-form')

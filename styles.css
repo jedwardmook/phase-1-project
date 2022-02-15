@@ -29,7 +29,7 @@ body{
 }
 
 .add-album-form{
-    position: relative
+    display: none;
 }
 
 .add{
@@ -43,7 +43,7 @@ body{
 
 .add-to-btn{
     text-align: center;
-    background-color: rgb(255, 136, 0);
+    background-color: rgb(233, 105, 0);
     border: none;
     border-radius: .25rem;
     border-bottom: 1px solid black;
@@ -69,7 +69,7 @@ body{
 }
 
 .album-container{
-    display: grid;
+    display: none;
     grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
     gap: .5rem;
     margin-top: 1rem;
@@ -100,7 +100,7 @@ p{
 }
 
 h2{
-    color: rgb(255, 136, 0);
+    color: rgb(233, 105, 0);
     margin-bottom: -.15rem;
 }
 
