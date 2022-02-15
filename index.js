@@ -12,6 +12,20 @@ const viewCollection = () => {
 }
 viewCollection()
 
+const toggleView = () => {
+  const viewBtn = document.getElementById("view-btn");
+  const albumContainer = document.querySelector('.album-container');
+  viewBtn.addEventListener("click", () => {
+  viewAlbum = !viewAlbum;
+    if (viewAlbum) {
+      albumContainer.style.display = "grid";
+    } else {
+      albumContainer.style.display = "none";
+    }
+ })
+};
+toggleView()
+
 const toggleSearches = () => {
     const togSearchBtn = document.getElementById("search-btn");
     const searchBar = document.getElementById("searchBar");
@@ -27,19 +41,7 @@ const toggleSearches = () => {
 };
 toggleSearches()
 
-const toggleView = () => {
-    const viewBtn = document.getElementById("view-btn");
-    const albumContainer = document.querySelector('.album-container');
-    viewBtn.addEventListener("click", () => {
-    viewAlbum = !viewAlbum;
-      if (viewAlbum) {
-        albumContainer.style.display = "grid";
-      } else {
-        albumContainer.style.display = "none";
-      }
-   })
-};
-toggleView()
+
 
 const toggleAdd = () => {
   const togAddBtn = document.getElementById("add-btn");
@@ -62,28 +64,27 @@ function getAlbums() {
     .then(albumData => albumData.forEach(renderAlbum))
     };
 
-const newAlbumForm = () => {
-        const albumForm = document.querySelector('.add-album-form')
-        albumForm.addEventListener('submit', (e) => {
-          e.preventDefault()
-          const albumName = e.target.name.value
-          const newAlbumImage = e.target.image.value
-          const albumArtist = e.target.artist.value
-          const albumGenre = e.target.genre.value
-          const albumRelease = e.target.release.value
-          const newAlbumObj = {
-            name: albumName,
-            image: newAlbumImage,
-            artist: albumArtist,
-            genre: albumGenre,
-            release: albumRelease,
-          }
-          logAlbum(newAlbumObj)
-          alert("Album added!")
-          getAlbums()
-        })
-    };
-newAlbumForm()
+// const newAlbumForm = () => {
+//         const albumForm = document.querySelector('.add-album-form')
+//         albumForm.addEventListener('submit', (e) => {
+//           e.preventDefault()
+//           const albumName = e.target.name.value
+//           const newAlbumImage = e.target.image.value
+//           const albumArtist = e.target.artist.value
+//           const albumGenre = e.target.genre.value
+//           const albumRelease = e.target.release.value
+//           const newAlbumObj = {
+//             name: albumName,
+//             image: newAlbumImage,
+//             artist: albumArtist,
+//             genre: albumGenre,
+//             release: albumRelease,
+//           }
+//           logAlbum(newAlbumObj)
+//           alert("Album added!")
+//         })
+//     };
+// newAlbumForm()
 
 function renderAlbum(album){
     let albumCard = document.createElement('div')
