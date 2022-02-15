@@ -68,27 +68,14 @@ function getAlbums() {
     };
 getAlbums()
 
-// const newAlbumForm = () => {
-//         const albumForm = document.querySelector('.add-album-form')
-//         albumForm.addEventListener('submit', (e) => {
-//           e.preventDefault()
-//           const albumName = e.target.name.value
-//           const newAlbumImage = e.target.image.value
-//           const albumArtist = e.target.artist.value
-//           const albumGenre = e.target.genre.value
-//           const albumRelease = e.target.release.value
-//           const newAlbumObj = {
-//             name: albumName,
-//             image: newAlbumImage,
-//             artist: albumArtist,
-//             genre: albumGenre,
-//             release: albumRelease,
-//           }
-//           logAlbum(newAlbumObj)
-//           alert("Album added!")
-//         })
-//     };
-// newAlbumForm()
+const newAlbumForm = () => {
+  const albumForm = document.querySelector(".add-album-form")
+  albumForm.addEventListener("submit", (e) => {
+    e.preventDefault()
+    console.log(e.target.name.value)
+  })
+}
+newAlbumForm()
 
 function renderAlbum(album){
     let albumCard = document.createElement('div')

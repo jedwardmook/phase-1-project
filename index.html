@@ -16,13 +16,15 @@
         <button class="search-btn" id="search-btn">Search Collection</button>
         <button class="add-btn" id="add-btn">Add to Collection</button>
     </div>
-    <div class="add-album-form">
+    <div class="add-container">
+        <form class="add-album-form">
         <h2 class="top">_________________________</h2>
         <input class="add"
           type="text"
           name="name"
           value=""
           placeholder="Album's Name"
+          id="album-text"
         />
         <br />
         <input class="add"
@@ -30,6 +32,7 @@
           name="artist"
           value=""
           placeholder="Album Artist"
+          id="artist-text"
         />
         <br />
         <input class="add"
@@ -37,6 +40,7 @@
           name="genre"
           value=""
           placeholder="Genre"
+          id="genre-text"
         />
         <br />
         <input class="add"
@@ -44,10 +48,17 @@
           name="release"
           value=""
           placeholder="Year Released"
+          id="release-text"
         />
         <br />
         <h2 class="bottom">_________________________</h2>
-        <button class="add-to-btn" id="add-to-btn">Add</button>
+        <input class="add-to-btn"
+            type="submit"
+            name="add-to"
+            value="Add"
+            id="submit"
+        />
+        </form>   
     </div>
     <div class="searchWrapper">
         <input class="search"
