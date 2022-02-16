@@ -86,7 +86,7 @@ function logAlbum(newAlbumObj){
     })
     .then(response => response.json())
     .then(response => gotAlbums.push(newAlbumObj))
-    gotAlbums.forEach(renderAlbum)  
+    viewCollection() 
 };
 //fetches
 //es6 object destructuring, object property value shorthand
@@ -117,7 +117,9 @@ function searchCollection() {
     const searchString = e.target.value.toLowerCase();
     const filteredAlbums = gotAlbums.filter( album => {
     return album.artist.toLowerCase().includes(searchString) ||
-            album.name.toLowerCase().includes(searchString)
+            album.name.toLowerCase().includes(searchString) ||
+            album.genre.toLowerCase().includes(searchString) ||
+            album.release.includes(searchString)
     })
     albumContainer.innerHTML=""
     filteredAlbums.forEach(renderAlbum)
