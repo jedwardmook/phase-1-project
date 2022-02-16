@@ -6,7 +6,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
 let gotAlbums = []
 const searchBar = document.querySelector(".search");
-
+const albumContainer = document.querySelector('#album-container')
 
 const viewCollection = () => {
     const viewBtn = document.getElementById("view-btn");
@@ -15,6 +15,7 @@ const viewCollection = () => {
     })
 }
 viewCollection()
+
 //toggles
 const toggleView = () => {
   const viewBtn = document.getElementById("view-btn");
@@ -129,7 +130,8 @@ function searchCollection() {
     return album.artist.toLowerCase().includes(searchString) ||
             album.name.toLowerCase().includes(searchString)
     })
-    console.log(filteredAlbums)
+    albumContainer.innerHTML=""
+    filteredAlbums.forEach(renderAlbum)
   })
 };
 searchCollection()
@@ -154,7 +156,6 @@ function renderAlbum(album){
       <button id="remove">Remove Album</button>
   </div>`
 
-  const albumContainer = document.querySelector('#album-container')
   albumContainer.append(albumCard)
   albumCard.querySelector('#remove').addEventListener('click', () => {
       albumCard.remove()
