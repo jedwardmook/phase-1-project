@@ -11,7 +11,8 @@ const albumContainer = document.querySelector('#album-container')
 const viewCollection = () => {
     const viewBtn = document.getElementById("view-btn");
     viewBtn.addEventListener("click", () =>{
-        gotAlbums.forEach(renderAlbum);
+      albumContainer.innerHTML=""
+      gotAlbums.forEach(renderAlbum);
     })
 }
 viewCollection()
