@@ -22,11 +22,7 @@ body{
     padding: 5px;
     cursor: pointer;
 }
-.search-wrapper{
-    display: grid;
-    flex-direction: column;
-    text-align: center;
-}
+
 
 .add-album-form{
     display: none;
@@ -112,6 +108,7 @@ h2{
 
 h3{
     margin-top: .25rem;
+    line-height: 1.25rem;
 }
 h4 {
     margin-top: -.5rem;

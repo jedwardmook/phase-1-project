@@ -1,5 +1,5 @@
 let viewAlbum = false;
-let searchAlbum = true;
+let searchAlbum = false;
 let addAlbum = false;
 
 document.addEventListener("DOMContentLoaded", () => {
@@ -16,13 +16,15 @@ viewCollection()
 
 const toggleView = () => {
   const viewBtn = document.getElementById("view-btn");
-  const albumContainer = document.querySelector('.album-container');
+  const albumContainer = document.querySelector(".album-container");
   viewBtn.addEventListener("click", () => {
   viewAlbum = !viewAlbum;
     if (viewAlbum) {
-      albumContainer.style.display = "grid";
+      albumContainer.style.display = "grid",
+      viewBtn.innerText = "Hide Collection";
     } else {
-      albumContainer.style.display = "none";
+      albumContainer.style.display = "none",
+      viewBtn.innerText = "View Collection";
     }
  })
 };
@@ -30,20 +32,20 @@ toggleView()
 
 const toggleSearches = () => {
     const togSearchBtn = document.getElementById("search-btn");
-    const searchBar = document.getElementById("searchBar");
+    const searchBar = document.querySelector(".search");
     togSearchBtn.addEventListener("click", () => {
     
       searchAlbum = !searchAlbum;
       if (searchAlbum) {
-        searchBar.style.display = "none";
+        searchBar.style.display = "grid",
+        togSearchBtn.innerText = "Hide Search";
       } else {
-        searchBar.style.display = "grid";
+        searchBar.style.display = "none",
+        togSearchBtn.innerText = "Search Collection";
       }
    })
 };
 toggleSearches()
-
-
 
 const toggleAdd = () => {
   const togAddBtn = document.getElementById("add-btn");
@@ -52,9 +54,11 @@ const toggleAdd = () => {
   
   addAlbum = !addAlbum;
     if (addAlbum) {
-      addToContainer.style.display = "block";
+      addToContainer.style.display = "block",
+      togAddBtn.innerText = "Hide Add to";
     } else {
-      addToContainer.style.display = "none";
+      addToContainer.style.display = "none",
+      togAddBtn.innerText = "Add to Collection";
     }
  })
   };
@@ -85,7 +89,7 @@ const newAlbumForm = () => {
       release: albumRelease,
     }
     logAlbum(newAlbumObj)
-    alert("Album Added")
+    alert("Album added")
   })
 }
 newAlbumForm()
