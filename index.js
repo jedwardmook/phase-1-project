@@ -5,6 +5,7 @@ let addAlbum = false;
 document.addEventListener("DOMContentLoaded", () => {
 
 let gotAlbums = []
+const searchBar = document.querySelector(".search");
 
 const viewCollection = () => {
     const viewBtn = document.getElementById("view-btn");
@@ -13,7 +14,7 @@ const viewCollection = () => {
     })
 }
 viewCollection()
-
+//toggles
 const toggleView = () => {
   const viewBtn = document.getElementById("view-btn");
   const albumContainer = document.querySelector(".album-container");
@@ -32,7 +33,6 @@ toggleView()
 
 const toggleSearches = () => {
     const togSearchBtn = document.getElementById("search-btn");
-    const searchBar = document.querySelector(".search");
     togSearchBtn.addEventListener("click", () => {
     
       searchAlbum = !searchAlbum;
@@ -63,7 +63,9 @@ const toggleAdd = () => {
  })
   };
 toggleAdd()
+//toggles
 
+//fetches
 function getAlbums() {
     fetch('http://localhost:3000/albums')
     .then(response => response.json())
@@ -71,6 +73,31 @@ function getAlbums() {
       gotAlbums = albumData})
     };
 getAlbums()
+
+function removeAlbum(id) {
+  fetch(`http://localhost:3000/albums/${id}`,{
+      method: "DELETE",
+      headers: {
+          'Content-Type':'application/json'
+      }
+  })
+  .then(response => response.json())
+  .then(albumData => console.log(albumData))
+  alert("Album deleted")
+};
+
+function logAlbum(newAlbumObj){
+  fetch('http://localhost:3000/albums', {
+    method: "POST",
+    headers: {
+      "Content-type": "application/json",
+    },
+    body: JSON.stringify(newAlbumObj)
+    })
+    .then(response => response.json())
+    .then(response => console.log(newAlbumObj))
+};
+//fetches
 
 const newAlbumForm = () => {
   const albumForm = document.querySelector(".add-album-form")
@@ -93,6 +120,15 @@ const newAlbumForm = () => {
   })
 }
 newAlbumForm()
+
+searchBar.addEventListener("input", (e) => {
+  const searchString = e.target.value.toLowerCase();
+  const filteredAlbums = gotAlbums.filter( album => {
+    return album.artist.toLowerCase().includes(searchString)
+  })
+  console.log(filteredAlbums)
+
+})
 
 function renderAlbum(album){
     let albumCard = document.createElement('div')
@@ -120,29 +156,9 @@ function renderAlbum(album){
     })
 };
 
-function logAlbum(newAlbumObj){
-  fetch('http://localhost:3000/albums', {
-    method: "POST",
-    headers: {
-      "Content-type": "application/json",
-    },
-    body: JSON.stringify(newAlbumObj)
-    })
-    .then(response => response.json())
-    .then(response => console.log(newAlbumObj))
-};
 
-function removeAlbum(id) {
-    fetch(`http://localhost:3000/albums/${id}`,{
-        method: "DELETE",
-        headers: {
-            'Content-Type':'application/json'
-        }
-    })
-    .then(response => response.json())
-    .then(albumData => console.log(albumData))
-    alert("Album deleted")
-};
+
+
 
 
 });
