@@ -13,7 +13,6 @@
     <div class="header"><img src="images/SRC.png" alt=""></div>
     <div class="buttons">
         <button class="view-btn" id="view-btn">View Collection</button>
-        <button class="search-btn" id="search-btn">Search Collection</button>
         <button class="add-btn" id="add-btn">Add to Collection</button>
     </div>
     <div class="add-container">
@@ -68,15 +67,18 @@
         />
         </form>   
     </div>
-    <div class="search-wrapper">
+    </div>
+    <div class="collection">
+      <div class="search-wrapper">
+      <!-- <button class="search-btn" id="search-btn">Search Collection</button> -->
         <input class="search"
             type= "search"
             name= "searchBar"
             id= "searchBar"
             placeholder= "Search by Album or Artist"
         />
+      <div class="album-container" id="album-container"></div>
     </div>
-    <div class="album-container" id="album-container"></div>
 </main>
 </body>
 </html>
