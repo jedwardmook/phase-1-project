@@ -39,6 +39,110 @@
       "genre": "Bossa Nova",
       "release": "1966",
       "id": 7
+    },
+    {
+      "name": "The Bends",
+      "image": "https://m.media-amazon.com/images/I/6148HrAemsL._SL1200_.jpg",
+      "artist": "Radiohead",
+      "genre": "Alternative Rock",
+      "release": "1995",
+      "id": 8
+    },
+    {
+      "name": "American Graffiti OST",
+      "image": "https://m.media-amazon.com/images/I/A1UAr7mMKzL._SL1500_.jpg",
+      "artist": "Various Artist",
+      "genre": "Rock n Roll",
+      "release": "1973",
+      "id": 9
+    },
+    {
+      "name": "Thriller",
+      "image": "https://m.media-amazon.com/images/I/81ogsUqshzL._SL1500_.jpg",
+      "artist": "Michael Jackson",
+      "genre": "Pop",
+      "release": "1982",
+      "id": 10
+    },
+    {
+      "name": "The Stranger",
+      "image": "https://m.media-amazon.com/images/I/81vbrv5cyhL._SL1500_.jpg",
+      "artist": "Billy Joel",
+      "genre": "Pop Rock",
+      "release": "1977",
+      "id": 11
+    },
+    {
+      "name": "1984",
+      "image": "https://m.media-amazon.com/images/I/61OYwLySjSS._SL1000_.jpg",
+      "artist": "Van Halen",
+      "genre": "Glam Metal",
+      "release": "1984",
+      "id": 12
+    },
+    {
+      "name": "Roy Orbison Sings Don Gibson",
+      "image": "https://m.media-amazon.com/images/I/714ily+7iDL._SL1500_.jpg",
+      "artist": "Roy Orbison",
+      "genre": "Country Music",
+      "release": "1967",
+      "id": 13
+    },
+    {
+      "name": "Sing Along with Bing Crosby and His Friends",
+      "image": "https://m.media-amazon.com/images/I/51I5MSwannL.jpg",
+      "artist": "Bing Crosby",
+      "genre": "Easy Listening",
+      "release": "1961",
+      "id": 14
+    },
+    {
+      "name": "Pretzel Logic",
+      "image": "https://m.media-amazon.com/images/I/81ekduyApgL._SS500_.jpg",
+      "artist": "Steely Dan",
+      "genre": "Jazz Rock",
+      "release": "1974",
+      "id": 15
+    },
+    {
+      "name": "RAM",
+      "image": "https://m.media-amazon.com/images/I/91BNs4cfhjL._SL1500_.jpg",
+      "artist": "Linda McCartney and Paul McCartney",
+      "genre": "Rock",
+      "release": "1971",
+      "id": 16
+    },
+    {
+      "name": "Hot August Night",
+      "image": "https://m.media-amazon.com/images/I/612aKtxbOXL._SL1200_.jpg",
+      "artist": "Neil Diamond",
+      "genre": "Rock",
+      "release": "1972",
+      "id": 17
+    },
+    {
+      "name": "Greatest Hits",
+      "image": "https://m.media-amazon.com/images/I/81Ygppq2WXL._SL1500_.jpg",
+      "artist": "Kenny Rogers",
+      "genre": "Pop Country",
+      "release": "1980",
+      "id": 18
+    },
+    {
+      "name": "Willie Nelson's Greatest Hits (& Some That Will Be)",
+      "image": "https://m.media-amazon.com/images/I/81J5mTThffL._SL1500_.jpg",
+      "artist": "Willie Nelson",
+      "genre": "Country",
+      "release": "1981",
+      "id": 19
+    },
+    {
+      "name": "Sweet Caroline",
+      "image": "https://m.media-amazon.com/images/I/81I5wmpQD9L._SS500_.jpg",
+      "artist": "Neil Diamond",
+      "genre": "Pop",
+      "release": "1969",
+      "id": 20
     }
   ]
 }

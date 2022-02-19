@@ -7,8 +7,10 @@ document.addEventListener("DOMContentLoaded", () => {
 let gotAlbums = []
 
 const searchBar = document.querySelector(".search");
-const albumContainer = document.querySelector('#album-container')
-//push
+const albumContainer = document.querySelector('#album-container');
+const addToContainer = document.querySelector(".add-album-form");
+const albumForm = document.querySelector(".add-album-form");
+
 const viewCollection = () => {
     const viewBtn = document.getElementById("view-btn");
     viewBtn.addEventListener("click", () =>{
@@ -21,7 +23,6 @@ viewCollection()
 //toggles
 const toggleView = () => {
   const viewBtn = document.getElementById("view-btn");
-  const albumContainer = document.querySelector(".album-container");
   viewBtn.addEventListener("click", () => {
   viewAlbum = !viewAlbum;
     if (viewAlbum) {
@@ -39,9 +40,7 @@ toggleView()
 
 const toggleAdd = () => {
   const togAddBtn = document.getElementById("add-btn");
-  const addToContainer = document.querySelector(".add-album-form");
   togAddBtn.addEventListener("click", () => {
-  
   addAlbum = !addAlbum;
     if (addAlbum) {
       addToContainer.style.display = "block",
@@ -51,7 +50,7 @@ const toggleAdd = () => {
       togAddBtn.innerText = "Add to Collection";
     }
  })
-  };
+};
 toggleAdd()
 //toggles
 
@@ -85,13 +84,16 @@ function logAlbum(newAlbumObj){
     body: JSON.stringify(newAlbumObj)
     })
     .then(response => response.json())
-    .then(response => gotAlbums.push(newAlbumObj))
-    viewCollection() 
+    .then(response => {
+      gotAlbums.push(newAlbumObj)
+      albumContainer.innerHTML=""
+      gotAlbums.forEach(renderAlbum)
+      albumForm.reset()
+  })
 };
 //fetches
 //es6 object destructuring, object property value shorthand
 const newAlbumForm = () => {
-  const albumForm = document.querySelector(".add-album-form")
   albumForm.addEventListener("submit", (e) => {
     e.preventDefault()
     const albumName= e.target.album.value
@@ -104,7 +106,7 @@ const newAlbumForm = () => {
       image: albumImage,
       artist: albumArtist,
       genre: albumGenre,
-      release: albumRelease,
+      release: albumRelease, 
     }
     logAlbum(newAlbumObj)
     alert("Album added")
@@ -126,7 +128,6 @@ function searchCollection() {
   })
 };
 searchCollection()
-//put added albums directly in array
 //code challenge- define functions/ if else/ array methods/ dom manipulations, give a play by play
 
 function renderAlbum(album){

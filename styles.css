@@ -1,6 +1,6 @@
 body{
     background-color: antiquewhite;
-    max-width: 740px;
+    max-width: 940px;
 
 }
 
@@ -9,8 +9,7 @@ body{
 }
 
 .header img{
-    max-width: 750px;
-    margin-bottom: -90px;
+    max-width: 950px;
 }
 
 .view-btn, .search-btn, .add-btn{
@@ -26,11 +25,9 @@ body{
 
 .add-album-form{
     display: none;
-    margin-left:218px;
 }
 
 .add-container{
-    position: relative;
     border-bottom: 1px rgb(233, 105, 0);
 }
 
