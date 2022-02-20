@@ -3,7 +3,7 @@ let searchAlbum = false;
 let addAlbum = false;
 
 document.addEventListener("DOMContentLoaded", () => {
-
+getAlbums()
 let gotAlbums = []
 
 const searchBar = document.querySelector(".search");
@@ -24,6 +24,7 @@ viewCollection()
 const toggleView = () => {
   const viewBtn = document.getElementById("view-btn");
   viewBtn.addEventListener("click", () => {
+  getAlbums()
   viewAlbum = !viewAlbum;
     if (viewAlbum) {
       albumContainer.style.display = "grid",
@@ -55,26 +56,6 @@ toggleAdd()
 //toggles
 
 //fetches
-function getAlbums() {
-    fetch('http://localhost:3000/albums')
-    .then(response => response.json())
-    .then(albumData => {
-      gotAlbums = albumData})
-    };
-getAlbums()
-//read callback again
-function removeAlbum(id) {
-  fetch(`http://localhost:3000/albums/${id}`,{
-      method: "DELETE",
-      headers: {
-          'Content-Type':'application/json'
-      }
-  })
-  .then(response => response.json())
-  .then(albumData => console.log(albumData))
-  alert("Album deleted")
-};
-
 function logAlbum(newAlbumObj){
   fetch('http://localhost:3000/albums', {
     method: "POST",
@@ -89,10 +70,34 @@ function logAlbum(newAlbumObj){
       albumContainer.innerHTML=""
       gotAlbums.forEach(renderAlbum)
       albumForm.reset()
+      console.log(response)
   })
 };
+
+function getAlbums() {
+    fetch('http://localhost:3000/albums')
+    .then(response => response.json())
+    .then(albumData => {
+      gotAlbums = albumData})
+    };
+
+//read callback again
+// function removeAlbum(id) {
+//   fetch(`http://localhost:3000/albums/${id}`,{
+//       method: "DELETE",
+//       headers: {
+//           'Content-Type':'application/json'
+//       }
+//   })
+//   .then(response => response.json())
+//   .then(albumData => {
+//     console.log(albumData)
+//     alert("Album deleted")
+//   })
+// };
 //fetches
-//es6 object destructuring, object property value shorthand
+
+
 const newAlbumForm = () => {
   albumForm.addEventListener("submit", (e) => {
     e.preventDefault()
@@ -110,6 +115,7 @@ const newAlbumForm = () => {
     }
     logAlbum(newAlbumObj)
     alert("Album added")
+    getAlbums()
   })
 }
 newAlbumForm()
@@ -131,7 +137,7 @@ searchCollection()
 //code challenge- define functions/ if else/ array methods/ dom manipulations, give a play by play
 
 function renderAlbum(album){
-  const {image, name, artist, genre, release} = album
+  const {image, name, artist, genre, release, id} = album
   const albumCard = document.createElement('div')
   albumCard.className ="card"
   albumCard.id ="card"
@@ -148,17 +154,23 @@ function renderAlbum(album){
   <div class="remove">
       <button id="remove">Remove Album</button>
   </div>`
-// unstanding variables, functions, callbacks, array methods, scope
+// understanding variables, functions, callbacks, array methods, scope
   albumContainer.append(albumCard)
   albumCard.querySelector('#remove').addEventListener('click', () => {
+    fetch(`http://localhost:3000/albums/${id}`,{
+      method: "DELETE",
+      headers: {
+          'Content-Type':'application/json'
+      }
+  })
+  .then(response => response.json())
+  .then(albumData => {
+    console.log(albumData)
+    alert("Album deleted")
+  })
       albumCard.remove()
-      removeAlbum(album.id)
+      console.log(gotAlbums)
   })
 };
-
-
-
-
-
 
 });

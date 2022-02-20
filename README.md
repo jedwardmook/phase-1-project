@@ -17,12 +17,13 @@ A simple application to log and search through one's physical album collection.
 1. Click the "Add to Collection" button and fill out the form.
 2. Click the "Add" button to add to the database and collection.
 
->Gif here
+<img src="images/add_form_gif.gif" alt="Add Form Gif" width=75%>
+
 ##### **VIEW & SEARCH COLLECTION**
 1. Click the "Viw Collection" button to access your albums.
 2. Use the search bar to search through the collection returning the albums that match the input you provided.
 
->Gif 2 here
+<img src="images/search_bar_gif.gif" alt="Search Bar Gif" width=75%>
 
 **Technologies Used:**
 
