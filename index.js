@@ -80,21 +80,6 @@ function getAlbums() {
     .then(albumData => {
       gotAlbums = albumData})
     };
-
-//read callback again
-// function removeAlbum(id) {
-//   fetch(`http://localhost:3000/albums/${id}`,{
-//       method: "DELETE",
-//       headers: {
-//           'Content-Type':'application/json'
-//       }
-//   })
-//   .then(response => response.json())
-//   .then(albumData => {
-//     console.log(albumData)
-//     alert("Album deleted")
-//   })
-// };
 //fetches
 
 
@@ -134,7 +119,6 @@ function searchCollection() {
   })
 };
 searchCollection()
-//code challenge- define functions/ if else/ array methods/ dom manipulations, give a play by play
 
 function renderAlbum(album){
   const {image, name, artist, genre, release, id} = album
@@ -154,7 +138,7 @@ function renderAlbum(album){
   <div class="remove">
       <button id="remove">Remove Album</button>
   </div>`
-// understanding variables, functions, callbacks, array methods, scope
+
   albumContainer.append(albumCard)
   albumCard.querySelector('#remove').addEventListener('click', () => {
     fetch(`http://localhost:3000/albums/${id}`,{
