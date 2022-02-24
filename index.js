@@ -11,6 +11,9 @@ const albumContainer = document.querySelector('#album-container');
 const addToContainer = document.querySelector(".add-album-form");
 const albumForm = document.querySelector(".add-album-form");
 
+
+
+//listener that triggers the card rendering
 const viewCollection = () => {
     const viewBtn = document.getElementById("view-btn");
     viewBtn.addEventListener("click", () =>{
@@ -55,7 +58,7 @@ const toggleAdd = () => {
 toggleAdd()
 //toggles
 
-//fetches
+//fetch handles POST
 function logAlbum(newAlbumObj){
   fetch('http://localhost:3000/albums', {
     method: "POST",
@@ -74,15 +77,16 @@ function logAlbum(newAlbumObj){
   })
 };
 
+//fetch hangles get
 function getAlbums() {
     fetch('http://localhost:3000/albums')
     .then(response => response.json())
     .then(albumData => {
       gotAlbums = albumData})
     };
-//fetches
 
 
+//form event
 const newAlbumForm = () => {
   albumForm.addEventListener("submit", (e) => {
     e.preventDefault()
@@ -105,6 +109,7 @@ const newAlbumForm = () => {
 }
 newAlbumForm()
 
+//function that allows you to search through collection
 function searchCollection() {
   searchBar.addEventListener("input", (e) => {
     const searchString = e.target.value.toLowerCase();
@@ -120,6 +125,7 @@ function searchCollection() {
 };
 searchCollection()
 
+//function that handles render card and handles deleting
 function renderAlbum(album){
   const {image, name, artist, genre, release, id} = album
   const albumCard = document.createElement('div')

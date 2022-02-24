@@ -143,6 +143,14 @@
       "genre": "Pop",
       "release": "1969",
       "id": 20
+    },
+    {
+      "name": "The Pointer Sisters",
+      "image": "https://m.media-amazon.com/images/I/71HgbuDzFUL._SL1000_.jpg",
+      "artist": "The Pointer Sisters",
+      "genre": "R&B",
+      "release": "1973",
+      "id": 21
     }
   ]
 }
