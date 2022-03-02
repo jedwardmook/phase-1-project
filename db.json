@@ -129,28 +129,12 @@
       "id": 18
     },
     {
-      "name": "Willie Nelson's Greatest Hits (& Some That Will Be)",
-      "image": "https://m.media-amazon.com/images/I/81J5mTThffL._SL1500_.jpg",
-      "artist": "Willie Nelson",
+      "name": "Same Train, Different Day",
+      "image": "https://m.media-amazon.com/images/I/61fcGb9XgRL.jpg",
+      "artist": "Merle Haggard",
       "genre": "Country",
-      "release": "1981",
-      "id": 19
-    },
-    {
-      "name": "Sweet Caroline",
-      "image": "https://m.media-amazon.com/images/I/81I5wmpQD9L._SS500_.jpg",
-      "artist": "Neil Diamond",
-      "genre": "Pop",
       "release": "1969",
-      "id": 20
-    },
-    {
-      "name": "The Pointer Sisters",
-      "image": "https://m.media-amazon.com/images/I/71HgbuDzFUL._SL1000_.jpg",
-      "artist": "The Pointer Sisters",
-      "genre": "R&B",
-      "release": "1973",
-      "id": 21
+      "id": 19
     }
   ]
 }

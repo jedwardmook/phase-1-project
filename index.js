@@ -4,7 +4,7 @@ let addAlbum = false;
 
 document.addEventListener("DOMContentLoaded", () => {
 getAlbums()
-let gotAlbums = []
+let gotAlbums
 
 const searchBar = document.querySelector(".search");
 const albumContainer = document.querySelector('#album-container');
@@ -25,6 +25,7 @@ viewCollection()
 
 //toggles
 const toggleView = () => {
+
   const viewBtn = document.getElementById("view-btn");
   viewBtn.addEventListener("click", () => {
   getAlbums()
@@ -77,7 +78,7 @@ function logAlbum(newAlbumObj){
   })
 };
 
-//fetch hangles get
+//fetch handles get
 function getAlbums() {
     fetch('http://localhost:3000/albums')
     .then(response => response.json())
